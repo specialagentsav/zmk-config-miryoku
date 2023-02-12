@@ -28,3 +28,9 @@ U_NP,              U_NP,              U_LT(U_MOUSE, ESC),U_LT(U_NAV, SPC),  U_LT
 &kp DOLLAR,          &kp N3,            &kp N2,            &kp N1,            &kp ASTERISK,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
 &kp TILDE,         &kp N6,            &kp N5,            &kp N4,            &kp SLASH,          U_NA,              &u_to_U_NUM,       &u_to_U_NAV,       &kp RALT,          U_NA,              \
 U_NP,              U_NP,              &kp SEMICOLON,     &kp N0,            &kp COLON,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+
+#define MIRYOKU_LAYER_FUN \
+&kp F12,           &kp F9,            &kp F8,            &kp F7,            &kp PSCRN,         U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
+&kp F11,           &kp F3,            &kp F2,            &kp F1,            &kp SLCK,          U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
+&kp F10,           &kp F6,            &kp F5,            &kp F4,            &kp PAUSE_BREAK,   U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
+U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp TAB,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
