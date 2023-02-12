@@ -11,9 +11,9 @@
 ) \
 XXX  XXX  XXX  XXX  XXX  XXX  XXX                                               XXX  XXX  XXX  XXX  XXX  XXX  XXX \
 XXX  K00  K01  K02  K03  K04  XXX                                               XXX  K05  K06  K07  K08  K09  XXX \
-XXX  K10  K11  K12  K13  K14  XXX       XXX  XXX                 XXX  XXX       XXX  K15  K16  K17  K18  K19  XXX \
+XXX  K10  K11  K12  K13  K14  XXX       K32  XXX                 XXX  K35       XXX  K15  K16  K17  K18  K19  XXX \
 XXX  K20  K21  K22  K23  K24       XXX  XXX  XXX  XXX       XXX  XXX  XXX  XXX       K25  K26  K27  K28  K29  XXX \
-XXX  XXX  XXX  XXX  XXX            K33  K34  K32                 K35  K37  K36            XXX  XXX  XXX  XXX  XXX
+XXX  XXX  XXX  XXX  XXX            K33  K34  XXX                 XXX  K37  K36            XXX  XXX  XXX  XXX  XXX
 
 #define MIRYOKU_MAPPING MIRYOKU_LAYOUTMAPPING_ADV360
 
@@ -21,7 +21,7 @@ XXX  XXX  XXX  XXX  XXX            K33  K34  K32                 K35  K37  K36  
 &kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             &kp SQT,           \
 U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),    &kp G,             &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),     \
 U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             &kp COMMA,         U_MT(RALT, DOT),   U_LT(U_BUTTON, SLASH),\
-U_NP,              U_NP,              U_LT(U_MOUSE, ESC),U_LT(U_NAV, SPC),  U_LT(U_MEDIA, RET),U_LT(U_FUN, TAB),  U_LT(U_SYM, BSPC), U_LT(U_NUM, DEL),  U_NP,              U_NP
+U_NP,              U_NP,              U_LT(U_MOUSE, ESC),U_LT(U_NAV, SPC),  U_LT(U_MEDIA, TAB),U_LT(U_FUN, RET),  U_LT(U_SYM, BSPC), U_LT(U_NUM, DEL),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp INS,           &kp HOME,          &kp UP,            &kp END,           &kp PG_UP,         \
