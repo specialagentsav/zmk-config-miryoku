@@ -24,20 +24,6 @@ SHIFT_MORPH(u_double_single, &kp DOUBLE_QUOTES, &kp SINGLE_QUOTE)
 
 / {
   behaviors {
-    u_caps_word: u_caps_word {
-      compatible = "zmk,behavior-caps-word";
-      label = "U_CAPS_WORD";
-      #binding-cells = <0>;
-      mods = <MOD_LSFT>;
-      continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z N0 N1 N2 N3 N4 N5 N6 N7 N8 N9 BACKSPACE DELETE COMMA UNDERSCORE EQUAL MINUS LEFT RIGHT DOLLAR>;
-    };
-  };
-};
-
-SHIFT_MORPH(u_caps_word_caps, &u_caps_word, &kp CAPS)
-
-/ {
-  behaviors {
     u_dot_bang_tap_mt: u_dot_bang_tap_mt {
       compatible = "zmk,behavior-hold-tap";
       label = "u_dot_bang_tap_mt";

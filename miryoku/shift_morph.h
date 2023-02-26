@@ -8,7 +8,5 @@
 #define U_COMMA_QUESTION &u_comma_question
 #define U_DOUBLE_SINGLE &u_double_single
 
-#define U_CAPS_WORD_CAPS &u_caps_word_caps
-
 #define U_DOT_BANG_TAP_MT(MOD) &u_dot_bang_tap_mt MOD U_DOT_BANG
 #define U_COMMA_QUESTION_TAP_LT(LAYER) &u_comma_question_tap_lt LAYER U_COMMA_QUESTION
