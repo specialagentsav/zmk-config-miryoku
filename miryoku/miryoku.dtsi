@@ -25,6 +25,10 @@ MIRYOKU_LAYER_LIST
 
 #include "miryoku_shift_functions.dtsi"
 
+&caps_word {
+    continue-list = <UNDERSCORE LEFT RIGHT>;
+};
+
 #include "miryoku_double_tap_guard.dtsi"
 
 #if defined (MIRYOKU_KLUDGE_MOUSEKEYSPR)
