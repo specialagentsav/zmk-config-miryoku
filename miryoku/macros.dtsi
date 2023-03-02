@@ -1,0 +1,148 @@
+// Copyright 2022 Lukas Kucera
+// https://github.com/kucera-lukas/miryoku
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+  behaviors {
+    macro_dquotes: macro_dquotes {
+      compatible = "zmk,behavior-macro";
+      label = "macro_dquotes";
+      #binding-cells = <0>;
+      bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+    };
+
+    macro_triple_dquotes: macro_triple_dquotes {
+      compatible = "zmk,behavior-macro";
+      label = "macro_triple_dquotes";
+      #binding-cells = <0>;
+      bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT &kp LEFT &kp LEFT>;
+    };
+
+    single_triple_dquotes: single_triple_dquotes {
+      compatible = "zmk,behavior-hold-tap";
+      label = "single_triple_dquotes";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&macro_triple_dquotes>, <&macro_dquotes>;
+    };
+
+    macro_squote: macro_squote {
+      compatible = "zmk,behavior-macro";
+      label = "macro_squote";
+      #binding-cells = <0>;
+      bindings = <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT>;
+    };
+
+    one_two_squotes: one_two_squotes {
+      compatible = "zmk,behavior-hold-tap";
+      label = "one_two_squotes";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&macro_squote>, <&kp>;
+    };
+
+    dquotes_squotes: dquotes_squotes {
+      compatible = "zmk,behavior-mod-morph";
+      label = "dquotes_squotes";
+      #binding-cells = <0>;
+      bindings = <&single_triple_dquotes 0 0>, <&one_two_squotes 0 SINGLE_QUOTE>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    macro_backtick: macro_backtick {
+      compatible = "zmk,behavior-macro";
+      label = "macro_backtick";
+      #binding-cells = <0>;
+      bindings = <&kp GRAVE &kp GRAVE &kp LEFT>;
+    };
+
+    macro_triple_backtick: macro_triple_backtick {
+      compatible = "zmk,behavior-macro";
+      label = "macro_triple_backtick";
+      #binding-cells = <0>;
+      bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT>;
+    };
+
+    single_triple_backtick: single_triple_backtick {
+      compatible = "zmk,behavior-hold-tap";
+      label = "single_triple_backtick";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&macro_triple_backtick>, <&macro_backtick>;
+    };
+
+    macro_parens: macro_parens {
+      compatible = "zmk,behavior-macro";
+      label = "macro_parens";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+    };
+
+    macro_double_parens: macro_double_parens {
+      compatible = "zmk,behavior-macro";
+      label = "macro_double_parens";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_PARENTHESIS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT &kp LEFT>;
+    };
+
+    single_double_parens: single_double_parens {
+      compatible = "zmk,behavior-hold-tap";
+      label = "single_double_parens";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&macro_double_parens>, <&macro_parens>;
+    };
+
+    macro_braces: macro_braces {
+      compatible = "zmk,behavior-macro";
+      label = "macro_braces";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
+    };
+
+    macro_double_braces: macro_double_braces {
+      compatible = "zmk,behavior-macro";
+      label = "macro_double_braces";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_BRACE &kp LEFT_BRACE &kp RIGHT_BRACE &kp RIGHT_BRACE &kp LEFT &kp LEFT>;
+    };
+
+    single_double_braces: single_double_braces {
+      compatible = "zmk,behavior-hold-tap";
+      label = "single_double_braces";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&macro_double_braces>, <&macro_braces>;
+    };
+
+    macro_brackets: macro_brackets {
+      compatible = "zmk,behavior-macro";
+      label = "macro_brackets";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+    };
+
+    macro_double_brackets: macro_double_brackets {
+      compatible = "zmk,behavior-macro";
+      label = "macro_double_brackets";
+      #binding-cells = <0>;
+      bindings = <&kp LEFT_BRACKET &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACKET &kp LEFT &kp LEFT>;
+    };
+
+    single_double_brackets: single_double_brackets {
+      compatible = "zmk,behavior-hold-tap";
+      label = "single_double_brackets";
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&macro_double_brackets>, <&macro_brackets>;
+    };
+  };
+};

@@ -9,9 +9,11 @@
 
 #include "hold_tap.h"
 #include "shift_morph.h"
+#include "macros.h"
 
 #include "hold_tap.dtsi"
 #include "shift_morph.dtsi"
+#include "macros.dtsi"
 
 #define XXX &none
 
@@ -30,15 +32,15 @@ XXX  XXX  XXX  XXX  K32            K33  K34  K32                 K35  K37  K36  
 #define MIRYOKU_MAPPING MIRYOKU_LAYOUTMAPPING_ADV360
 
 #define MIRYOKU_LAYER_BASE \
-&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,                                 U_DOUBLE_SINGLE,                         \
+&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,                                 U_DQUOTES_SQUOTES,                       \
 U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),    &kp G,             &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),                         U_MT(LGUI, O),                           \
 U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG_TAP_MT(RALT),               U_COMMA_QUESTION_TAP_LT(U_BUTTON),       \
 U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPC),  U_LT(U_MOUSE, TAB),U_LT(U_FUN, DEL),  U_LT(U_SYM, BSPC), U_LT(U_NUM, RET),  U_NP,                                  U_NP
 
 #define MIRYOKU_LAYER_TAP \
-&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DOUBLE_SINGLE,   \
-&kp A,             &kp R,             &kp S,             &kp T,             &kp G,             &kp M,             &kp N,             &kp E,             &kp I,             &kp O,             \
-&kp Z,             &kp X,             &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,  \
+&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,   \
+&kp A,             &kp R,             &kp S,             &kp T,             &kp G,             &kp M,             &kp N,             &kp E,             &kp I,             &kp O,               \
+&kp Z,             &kp X,             &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,    \
 U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
@@ -48,10 +50,10 @@ U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp DEL,               &kp BSPC,          &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
-&kp TILDE,         &kp GRAVE,              &kp BACKSLASH,             &kp AMPERSAND,                &kp PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
-&kp HASH,          U_LEFT_RIGHT_BRACKET,   U_LEFT_RIGHT_BRACE,        &kp EQUAL,                    &kp SLASH,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-&kp AT_SIGN,       &kp LESS_THAN,          &kp GREATER_THAN,          &kp PIPE,                     &kp ASTERISK,      U_NA,              &u_to_U_SYM,       &u_to_U_NAV,       &kp RALT,          U_NA,              \
-U_NP,              U_NP,                   &kp SEMICOLON,             U_LEFT_RIGHT_PAREN,           &kp COLON,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+&kp TILDE,         U_SINGLE_TRIPLE_BACKTICK, &kp BACKSLASH,             &kp AMPERSAND,                &kp PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
+&kp HASH,          U_SINGLE_DOUBLE_BRACKETS, U_SINGLE_DOUBLE_BRACES,    &kp EQUAL,                    &kp SLASH,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
+&kp AT_SIGN,       &kp LESS_THAN,            &kp GREATER_THAN,          &kp PIPE,                     &kp ASTERISK,      U_NA,              &u_to_U_SYM,       &u_to_U_NAV,       &kp RALT,          U_NA,              \
+U_NP,              U_NP,                     &kp SEMICOLON,             U_SINGLE_DOUBLE_PARENS,       &kp COLON,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NUM \
 &kp CARET,         &kp N9,            &kp N8,            &kp N7,            &kp PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
