@@ -17,11 +17,6 @@
   }; \
 };
 
-SHIFT_MORPH(u_dot_bang, &kp DOT, &kp EXCLAMATION)
-SHIFT_MORPH(u_under_minus, &kp UNDERSCORE, &kp MINUS)
-SHIFT_MORPH(u_comma_question, &kp COMMA, &kp QUESTION)
-SHIFT_MORPH(u_double_single, &kp DOUBLE_QUOTES, &kp SINGLE_QUOTE)
-
 / {
   behaviors {
     u_caps_word: u_caps_word {
@@ -35,29 +30,3 @@ SHIFT_MORPH(u_double_single, &kp DOUBLE_QUOTES, &kp SINGLE_QUOTE)
 };
 
 SHIFT_MORPH(u_caps_word_caps, &u_caps_word, &kp CAPS)
-
-/ {
-  behaviors {
-    u_dot_bang_tap_mt: u_dot_bang_tap_mt {
-      compatible = "zmk,behavior-hold-tap";
-      label = "u_dot_bang_tap_mt";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&u_dot_bang>;
-    };
-  };
-};
-
-/ {
-  behaviors {
-    u_comma_question_tap_lt: u_comma_question_tap_lt {
-      compatible = "zmk,behavior-hold-tap";
-      label = "u_comma_question_tap_lt";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&mo>, <&u_comma_question>;
-    };
-  };
-};
