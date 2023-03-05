@@ -44,10 +44,10 @@ U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPC),  U_LT
 U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp INS,           &kp HOME,          &kp UP,            &kp END,           &kp PG_UP,         \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_CAPS_WORD_CAPS,  &kp LEFT,          &kp DOWN,          &kp RIGHT,         &kp PG_DN,         \
+U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp INS,           &kp HOME,          U_NAV_UP,          &kp END,           &kp PG_UP,         \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_CAPS_WORD_CAPS,  U_NAV_LEFT,        U_NAV_DOWN,        U_NAV_RIGHT,       &kp PG_DN,         \
 U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_NAV_DEL,         U_NAV_BSPC,        &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
 U_SINGLE_DOUBLE_TILDE,         U_SINGLE_TRIPLE_BACKTICK,     U_SINGLE_DOUBLE_BACKSLASH,             U_SINGLE_DOUBLE_AMPERSAND,                U_SINGLE_DOUBLE_PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
