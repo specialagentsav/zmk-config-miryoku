@@ -8,11 +8,10 @@
 #define U_STRINGIFY(x) #x
 
 #include "hold_tap.h"
-#include "shift_morph.h"
 #include "macros.h"
 
+#include "combos.dtsi"
 #include "hold_tap.dtsi"
-#include "shift_morph.dtsi"
 #include "macros.dtsi"
 
 #define XXX &none
@@ -44,9 +43,9 @@ U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPC),  U_LT
 U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp INS,           &kp HOME,          U_NAV_UP,          &kp END,           &kp PG_UP,         \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_CAPS_WORD_CAPS,  U_NAV_LEFT,        U_NAV_DOWN,        U_NAV_RIGHT,       &kp PG_DN,         \
-U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
+U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp PG_UP,         &kp HOME,          U_NAV_UP,          &kp END,           &kp INS,   \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp PG_DN,         U_NAV_LEFT,        U_NAV_DOWN,        U_NAV_RIGHT,       U_NP,     \
+U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,     \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_NAV_DEL,         U_NAV_BSPC,        &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_SYM \
