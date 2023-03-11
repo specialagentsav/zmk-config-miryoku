@@ -4,6 +4,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#include "hold_tap.h"
+#include "hold_tap.dtsi"
+
 / {
   behaviors {
     u_caps_word: u_caps_word {
@@ -26,10 +29,17 @@
 
   combos {
     compatible = "zmk,combos";
+
     combo_caps_word_caps {
       key-positions = <32 41>;
       bindings = <&caps_word_caps CAPS 0>;
       layers = <0>;
+    };
+
+    combo_close_refresh_tab {
+      key-positions = <25 23>;
+      bindings = <U_CLOSE_REFRESH_TAB>;
+      layers = <4>;
     };
   };
 };

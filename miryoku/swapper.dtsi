@@ -19,15 +19,16 @@
       label = "gui_tab_swapper";
       #binding-cells = <0>;
       bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-      ignored-key-positions = <26 32>;
+      ignored-key-positions = <26>;
     };
 
     alt_gui_tab_swapper: alt_gui_tab_swapper {
-      compatible = "zmk,behavior-mod-morph";
+      compatible = "zmk,behavior-hold-tap";
       label = "alt_gui_tab_swapper";
-      #binding-cells = <0>;
-      bindings = <&alt_tab_swapper>, <&gui_tab_swapper>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
+      #binding-cells = <2>;
+      tapping_term_ms = <U_TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&gui_tab_swapper>, <&alt_tab_swapper>;
     };
   };
 };
