@@ -8,7 +8,7 @@ jobs:
     uses: ./.github/workflows/main.yml
     secrets: inherit
     with:
-      board: '["adv360pro_left,adv360pro_right"]'
+      board: '["adv360pro_left","adv360pro_right"]'
       shield: '["default"]'
       alphas: '["default"]'
       nav: '["invertedT"]'
