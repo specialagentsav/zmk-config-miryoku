@@ -1,0 +1,20 @@
+# Copyright 2022 Lukas Kucera
+# https://github.com/kucera-lukas/miryoku
+
+name: 'Build adv360pro'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["adv360pro_left,adv360pro_right"]'
+      shield: '["default"]'
+      alphas: '["default"]'
+      nav: '["invertedT"]'
+      clipboard: '["default"]'
+      layers: '["default"]'
+      mapping: '["default"]'
+      custom_config: '["#define MIRYOKU_KLUDGE_MOUSEKEYSPR"]'
+      kconfig: '["CONFIG_ZMK_MOUSE=y"]'
+      branches: '["urob/zmk/main"]'
