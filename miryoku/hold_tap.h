@@ -15,4 +15,14 @@
 #define U_NAV_BSPC  HOLD_TAP(LC(BSPC), BSPC)  // tap: bspc  | long-tap: delete word backward
 #define U_NAV_DEL   HOLD_TAP(LC(DEL), DEL)    // tap: del   | long-tap: delete word forward
 
-#define U_CLOSE_REFRESH_TAB HOLD_TAP(LC(W), LC(R))
+#define U_REFRESH_CLOSE_TAB HOLD_TAP(LC(W), LC(R))
+
+#define U_PLAY_PAUSE_STOP HOLD_TAP(C_STOP, C_PLAY_PAUSE)
+#define U_LOCK_POWER HOLD_TAP(C_POWER, LG(L))
+#define U_VOLUME_DOWN_MUTE HOLD_TAP(C_MUTE, C_VOLUME_DOWN)
+#define U_MIC_DOWN_MUTE HOLD_TAP(LC(LA(LS(C))), LC(LA(LS(I))))
+#define U_ZOOM_OUT_RESET HOLD_TAP(LC(N0), LC(MINUS))
+
+#define U_OUT_USB_BLE OUT_HOLD_TAP(OUT_BLE, OUT_USB)
+#define U_RGB_TOG_OFF RGB_HOLD_TAP(RGB_OFF, RGB_TOG)
+#define U_EP_TOG_OFF EXT_POWER_HOLD_TAP(EP_OFF, EP_TOG)

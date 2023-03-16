@@ -1,8 +1,9 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-#include <dt-bindings/zmk/keys.h>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define U_TAPPING_TERM 200
 #define U_STRINGIFY(x) #x
@@ -26,8 +27,8 @@
 ) \
 XXX  XXX  XXX  XXX  XXX  XXX  XXX                                               XXX  XXX  XXX  XXX  XXX  XXX  XXX \
 XXX  K00  K01  K02  K03  K04  XXX                                               XXX  K05  K06  K07  K08  K09  XXX \
-XXX  K10  K11  K12  K13  K14  XXX       XXX  XXX                 XXX  XXX       XXX  K15  K16  K17  K18  K19  XXX \
-XXX  K20  K21  K22  K23  K24       XXX  XXX  XXX  XXX       XXX  XXX  XXX  XXX       K25  K26  K27  K28  K29  XXX \
+XXX  K10  K11  K12  K13  K14  XXX       K32  K32                 K35  K35       XXX  K15  K16  K17  K18  K19  XXX \
+XXX  K20  K21  K22  K23  K24       XXX  XXX  K32  XXX       XXX  K35  XXX  XXX       K25  K26  K27  K28  K29  XXX \
 XXX  XXX  XXX  XXX  K32            K33  K34  K32                 K35  K37  K36            K35  XXX  XXX  XXX  XXX
 
 #define MIRYOKU_MAPPING MIRYOKU_LAYOUTMAPPING_ADV360
@@ -69,10 +70,10 @@ U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_MOUSE,     U_NA
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_BTN3,            U_BTN1,            U_BTN2,            U_NP,              U_NP
 
 #define MIRYOKU_LAYER_MEDIA \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_RGB_TOG,         U_RGB_EFF,         &kp C_VOL_UP,      U_RGB_HUI,         U_ZOOM_OUT,         \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_EP_TOG,          &kp C_PREV,        &kp C_VOL_DN,      &kp C_NEXT,        U_ZOOM_IN,         \
-U_NA,              &kp RALT,          &u_to_U_FUN,       &u_to_U_MEDIA,     U_NA,              &u_out_tog,        &u_bt_sel_0,       &u_bt_sel_1,       &u_bt_sel_2,       &u_bt_sel_3,       \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              &kp C_STOP,        &kp C_PP,          &kp C_MUTE,        U_NP,              U_NP
+U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp LC(LA(LS(T))),    &kp LC(PLUS),        &kp C_VOL_UP,        &kp LC(LA(LS(M))),         &kp C_BRIGHTNESS_INC,         \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_LOCK_POWER,         U_ZOOM_OUT_RESET,    U_VOLUME_DOWN_MUTE,  U_MIC_DOWN_MUTE,           &kp C_BRIGHTNESS_DEC,         \
+U_NA,              &kp RALT,          &u_to_U_FUN,       &u_to_U_MEDIA,     U_NA,              &kp LG(DOT),          &kp C_PREV,          &kp C_NEXT,          U_OUT_USB_BLE,             &bt BT_NXT,                   \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_EMAIL,              U_PLAY_PAUSE_STOP,   &kp LC(LA(LS(N))),   U_NP,                      U_NP
 
 #define MIRYOKU_LAYER_FUN \
 &kp SCLK,          &kp F9,            &kp F8,            &kp F7,            &kp F12,           U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \

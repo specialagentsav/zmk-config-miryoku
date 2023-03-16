@@ -31,5 +31,4 @@
 #define U_SINGLE_DOUBLE_COLON &single_double_colon 0 COLON
 #define U_SINGLE_DOUBLE_SEMICOLON &single_double_semicolon 0 SEMICOLON
 
-#define U_ZOOM_IN &zoom_in
-#define U_ZOOM_OUT &zoom_out
+#define U_EMAIL &email

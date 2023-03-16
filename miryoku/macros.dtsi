@@ -537,25 +537,20 @@
       bindings = <&macro_double_semicolon>, <&kp>;
     };
 
-    zoom_in: zoom_in {
+    email: email {
       compatible = "zmk,behavior-macro";
-      label = "zoom_in";
+      label = "email";
       #binding-cells = <0>;
       bindings
-        = <&macro_press   &kp LCTRL>
-        , <&macro_tap     &kp PLUS>
-        , <&macro_release &kp LCTRL>
-        ;
-    };
-
-    zoom_out: zoom_out {
-      compatible = "zmk,behavior-macro";
-      label = "zoom_out";
-      #binding-cells = <0>;
-      bindings
-        = <&macro_press   &kp LCTRL>
-        , <&macro_tap     &kp MINUS>
-        , <&macro_release &kp LCTRL>
+        = <&kp L &kp U &kp K &kp A &kp S>
+        , <&kp DOT>
+        , <&kp K &kp U &kp C &kp E &kp R &kp A>
+        , <&kp DOT>
+        , <&kp G>
+        , <&kp AT>
+        , <&kp G &kp M &kp A &kp I &kp L>
+        , <&kp DOT>
+        , <&kp C &kp O &kp M>
         ;
     };
   };
