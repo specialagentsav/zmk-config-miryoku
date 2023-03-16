@@ -58,9 +58,9 @@ U_SINGLE_DOUBLE_AT_SIGN,       U_SINGLE_DOUBLE_LESS_THAN,    U_SINGLE_DOUBLE_GRE
 U_NP,                          U_NP,                         U_SINGLE_DOUBLE_SEMICOLON,             U_SINGLE_DOUBLE_PARENS,                   U_SINGLE_DOUBLE_COLON,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NUM \
-U_SINGLE_DOUBLE_CARET,         &kp N9,      &kp N8,                      &kp N7,            U_SINGLE_DOUBLE_PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
+U_SINGLE_DOUBLE_CARET,         &kp N6,      &kp N5,                      &kp N4,            U_SINGLE_DOUBLE_PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
 U_SINGLE_DOUBLE_DOLLAR,        &kp N3,      &kp N2,                      &kp N1,            U_SINGLE_DOUBLE_SLASH,         U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-U_SINGLE_DOUBLE_PERCENT,       &kp N6,      &kp N5,                      &kp N4,            U_SINGLE_DOUBLE_ASTERISK,      U_NA,              &u_to_U_NUM,       &u_to_U_MOUSE,     &kp RALT,          U_NA,              \
+U_SINGLE_DOUBLE_PERCENT,       &kp N9,      &kp N8,                      &kp N7,            U_SINGLE_DOUBLE_ASTERISK,      U_NA,              &u_to_U_NUM,       &u_to_U_MOUSE,     &kp RALT,          U_NA,              \
 U_NP,                          U_NP,        U_SINGLE_DOUBLE_SEMICOLON,   &kp N0,            U_SINGLE_DOUBLE_COLON,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_MOUSE \
@@ -76,7 +76,7 @@ U_NA,              &kp RALT,          &u_to_U_FUN,       &u_to_U_MEDIA,     U_NA
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_EMAIL,              U_PLAY_PAUSE_STOP,   &kp LC(LA(LS(N))),   U_NP,                      U_NP
 
 #define MIRYOKU_LAYER_FUN \
-&kp SCLK,          &kp F9,            &kp F8,            &kp F7,            &kp F12,           U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
+&kp SCLK,          &kp F6,            &kp F5,            &kp F4,            &kp F11,           U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
 &kp PSCRN,         &kp F3,            &kp F2,            &kp F1,            &kp F10,           U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-&kp PAUSE_BREAK,   &kp F6,            &kp F5,            &kp F4,            &kp F11,           U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
+&kp PAUSE_BREAK,   &kp F9,            &kp F8,            &kp F7,            &kp F12,           U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
 U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp TAB,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
