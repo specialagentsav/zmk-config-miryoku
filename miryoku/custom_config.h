@@ -10,11 +10,13 @@
 
 #include "hold_tap.h"
 #include "macros.h"
+#include "sticky_key.h"
 #include "swapper.h"
 
 #include "combos.dtsi"
 #include "hold_tap.dtsi"
 #include "macros.dtsi"
+#include "sticky_key.dtsi"
 #include "swapper.dtsi"
 
 #define XXX &none
@@ -34,16 +36,16 @@ XXX  XXX  XXX  XXX  K32            K33  K34  K32                 K35  K37  K36  
 #define MIRYOKU_MAPPING MIRYOKU_LAYOUTMAPPING_ADV360
 
 #define MIRYOKU_LAYER_BASE \
-&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,      \
-U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),    &kp G,             &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),          \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,       \
-U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT(U_NAV, SPC),  U_LT(U_MOUSE, TAB),U_LT(U_FUN, DEL),  U_LT(U_SYM, BSPC), U_LT(U_NUM, RET),  U_NP,              U_NP
+&kp Q,             &kp W,             &kp F,             &kp P,                                   &kp B,               &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,      \
+U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),                          &kp G,               &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),          \
+U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,                                   &kp V,               &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,       \
+U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT_SHIFT_MORPH_SENTENCE_SKQ(U_NAV),    U_LT(U_MOUSE, TAB),  U_LT(U_FUN, DEL),  U_LT(U_SYM, BSPC), U_LT(U_NUM, RET),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_TAP \
-&kp Q,             &kp W,             &kp F,             &kp P,             &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,   \
-&kp A,             &kp R,             &kp S,             &kp T,             &kp G,             &kp M,             &kp N,             &kp E,             &kp I,             &kp O,               \
-&kp Z,             &kp X,             &kp C,             &kp D,             &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,    \
-U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
+&kp Q,             &kp W,             &kp F,             &kp P,                      &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,   \
+&kp A,             &kp R,             &kp S,             &kp T,                      &kp G,             &kp M,             &kp N,             &kp E,             &kp I,             &kp O,               \
+&kp Z,             &kp X,             &kp C,             &kp D,                      &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,    \
+U_NP,              U_NP,              &kp ESC,           U_SHIFT_MORPH_SENTENCE_SKQ, &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp PG_UP,         &kp LS(LC(TAB)),   U_NAV_UP,          &kp LC(TAB),   &kp LS(TAB),               \
@@ -76,7 +78,7 @@ U_NA,              &kp RALT,          &u_to_U_FUN,       &u_to_U_MEDIA,     U_NA
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_EMAIL,              U_PLAY_PAUSE_STOP,   &kp LC(LA(LS(N))),   U_NP,                      U_NP
 
 #define MIRYOKU_LAYER_FUN \
-&kp SCLK,          &kp F6,            &kp F5,            &kp F4,            &kp F11,           U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
-U_SCREENSHOT,      &kp F3,            &kp F2,            &kp F1,            &kp F10,           U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
-&kp PAUSE_BREAK,   &kp F9,            &kp F8,            &kp F7,            &kp F12,           U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
-U_NP,              U_NP,              &kp K_APP,         &kp SPACE,         &kp TAB,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
+&kp SCLK,          &kp F6,            &kp F5,            &kp F4,                     &kp F11,           U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
+U_SCREENSHOT,      &kp F3,            &kp F2,            &kp F1,                     &kp F10,           U_NA,              &kp LSHFT,         &kp LCTRL,         &kp LALT,          &kp LGUI,          \
+&kp PAUSE_BREAK,   &kp F9,            &kp F8,            &kp F7,                     &kp F12,           U_NA,              &u_to_U_FUN,       &u_to_U_MEDIA,     &kp RALT,          U_NA,              \
+U_NP,              U_NP,              &kp K_APP,         U_SHIFT_MORPH_SENTENCE_SKQ, &kp TAB,           U_NA,              U_NA,              U_NA,              U_NP,              U_NP
