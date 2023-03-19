@@ -11,6 +11,7 @@
 
 #include "hold_tap.h"
 #include "homerow_mods.h"
+#include "layer_tap.h"
 #include "macros.h"
 #include "sticky_key.h"
 #include "swapper.h"
@@ -18,6 +19,7 @@
 #include "combos.dtsi"
 #include "hold_tap.dtsi"
 #include "homerow_mods.dtsi"
+#include "layer_tap.dtsi"
 #include "macros.dtsi"
 #include "sticky_key.dtsi"
 #include "swapper.dtsi"
@@ -39,10 +41,10 @@ XXX  XXX  XXX  XXX  K32            K33  K34  K32                 K35  K37  K36  
 #define MIRYOKU_MAPPING MIRYOKU_LAYOUTMAPPING_ADV360
 
 #define MIRYOKU_LAYER_BASE \
-&kp Q,             &kp W,             &kp F,             &kp P,                                   &kp B,               &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,      \
-U_HML(LGUI, A),    U_HML(LALT, R),    U_HML(LCTRL, S),   U_HML(LSHFT, T),                         &kp G,               &kp M,             U_HMR(LSHFT, N),   U_HMR(LCTRL, E),   U_HMR(LALT, I),    U_HMR(LGUI, O),          \
-&kp Z,             &kp X,             &kp C,             &kp D,                                   &kp V,               &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,       \
-U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT_SHIFT_MORPH_SENTENCE_SKQ(U_NAV),    U_LT(U_MOUSE, TAB),  U_LT(U_FUN, DEL),  U_LT(U_SYM, BSPC), U_LT(U_NUM, RET),  U_NP,              U_NP
+&kp Q,             &kp W,             &kp F,                        &kp P,                                   &kp B,                      &kp J,                    &kp L,                      &kp U,                    &kp Y,             U_DQUOTES_SQUOTES,      \
+U_HML(LGUI, A),    U_HML(LALT, R),    U_HML(LCTRL, S),              U_HML(LSHFT, T),                         &kp G,                      &kp M,                    U_HMR(LSHFT, N),            U_HMR(LCTRL, E),          U_HMR(LALT, I),    U_HMR(LGUI, O),          \
+&kp Z,             &kp X,             &kp C,                        &kp D,                                   &kp V,                      &kp K,                    &kp H,                      U_UNDER_MINUS,            U_DOT_BANG,        U_COMMA_QUESTION,       \
+U_NP,              U_NP,              U_LAYER_TAP(U_MEDIA, ESC),    U_LT_SHIFT_MORPH_SENTENCE_SKQ(U_NAV),    U_LAYER_TAP(U_MOUSE, TAB),  U_LAYER_TAP(U_FUN, DEL),  U_LAYER_TAP(U_SYM, BSPC),   U_LAYER_TAP(U_NUM, RET),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_TAP \
 &kp Q,             &kp W,             &kp F,             &kp P,                      &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,   \
