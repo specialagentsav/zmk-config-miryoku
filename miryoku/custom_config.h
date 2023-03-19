@@ -6,15 +6,18 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define U_TAPPING_TERM 200
+#define U_QUICK_TAP_MS 175
 #define U_STRINGIFY(x) #x
 
 #include "hold_tap.h"
+#include "homerow_mods.h"
 #include "macros.h"
 #include "sticky_key.h"
 #include "swapper.h"
 
 #include "combos.dtsi"
 #include "hold_tap.dtsi"
+#include "homerow_mods.dtsi"
 #include "macros.dtsi"
 #include "sticky_key.dtsi"
 #include "swapper.dtsi"
@@ -37,8 +40,8 @@ XXX  XXX  XXX  XXX  K32            K33  K34  K32                 K35  K37  K36  
 
 #define MIRYOKU_LAYER_BASE \
 &kp Q,             &kp W,             &kp F,             &kp P,                                   &kp B,               &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,      \
-U_MT(LGUI, A),     U_MT(LALT, R),     U_MT(LCTRL, S),    U_MT(LSHFT, T),                          &kp G,               &kp M,             U_MT(LSHFT, N),    U_MT(LCTRL, E),    U_MT(LALT, I),     U_MT(LGUI, O),          \
-U_LT(U_BUTTON, Z), U_MT(RALT, X),     &kp C,             &kp D,                                   &kp V,               &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,       \
+U_HML(LGUI, A),    U_HML(LALT, R),    U_HML(LCTRL, S),   U_HML(LSHFT, T),                         &kp G,               &kp M,             U_HMR(LSHFT, N),   U_HMR(LCTRL, E),   U_HMR(LALT, I),    U_HMR(LGUI, O),          \
+&kp Z,             &kp X,             &kp C,             &kp D,                                   &kp V,               &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,       \
 U_NP,              U_NP,              U_LT(U_MEDIA, ESC),U_LT_SHIFT_MORPH_SENTENCE_SKQ(U_NAV),    U_LT(U_MOUSE, TAB),  U_LT(U_FUN, DEL),  U_LT(U_SYM, BSPC), U_LT(U_NUM, RET),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_TAP \

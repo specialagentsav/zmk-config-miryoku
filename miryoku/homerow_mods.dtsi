@@ -1,0 +1,41 @@
+// Copyright 2022 Lukas Kucera
+// https://github.com/kucera-lukas/zmk-config
+
+// Inspired by https://github.com/urob/zmk-config/tree/main#timeless-homerow-mods
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define KEYS_L 15 16 17 18 19 29 30 31 32 33 47 48 49 50 51  // left-hand keys
+#define KEYS_R 22 23 24 25 26 40 41 42 43 44 60 61 62 63 64  // right-hand keys
+#define THUMBS 35 36 37 38 54 57 70 71 72 73 74 75 76 77     // thumb keys
+
+/ {
+    behaviors {
+      hml: hml {
+        compatible = "zmk,behavior-hold-tap";
+        label = "hml";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <280>;
+        quick-tap-ms = <U_QUICK_TAP_MS>;
+        global-quick-tap-ms = <150>;        // requires PR #1387
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <KEYS_R THUMBS>;
+        hold-trigger-on-release;            // requires PR #1423
+      };
+
+      hmr: hmr {
+        compatible = "zmk,behavior-hold-tap";
+        label = "hmr";
+        #binding-cells = <2>;
+        flavor = "balanced";
+        tapping-term-ms = <280>;
+        quick-tap-ms = <U_QUICK_TAP_MS>;
+        global-quick-tap-ms = <150>;        // requires PR #1387
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <KEYS_L THUMBS>;
+        hold-trigger-on-release;            // requires PR #1423
+    };
+  };
+};
