@@ -1,8 +1,14 @@
 // Copyright 2022 Lukas Kucera
-// https://github.com/kucera-lukas/miryoku
+// https://github.com/kucera-lukas/zmk-config
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+
+#include "hold_tap.h"
+#include "mod_morph.h"
+
+#include "hold_tap.dtsi"
+#include "mod_morph.dtsi"
 
 / {
   behaviors {
@@ -20,37 +26,11 @@
       bindings = <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT &kp LEFT &kp LEFT>;
     };
 
-    single_triple_dquotes: single_triple_dquotes {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_triple_dquotes";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_triple_dquotes>, <&macro_dquotes>;
-    };
-
     macro_squote: macro_squote {
       compatible = "zmk,behavior-macro";
       label = "macro_squote";
       #binding-cells = <0>;
       bindings = <&kp SINGLE_QUOTE &kp SINGLE_QUOTE &kp LEFT>;
-    };
-
-    one_two_squotes: one_two_squotes {
-      compatible = "zmk,behavior-hold-tap";
-      label = "one_two_squotes";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_squote>, <&kp>;
-    };
-
-    dquotes_squotes: dquotes_squotes {
-      compatible = "zmk,behavior-mod-morph";
-      label = "dquotes_squotes";
-      #binding-cells = <0>;
-      bindings = <&single_triple_dquotes 0 0>, <&one_two_squotes 0 SINGLE_QUOTE>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     macro_double_under: macro_double_under {
@@ -60,37 +40,11 @@
       bindings = <&kp UNDERSCORE &kp UNDERSCORE>;
     };
 
-    single_double_under: single_double_under {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_under";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_under>, <&kp>;
-    };
-
     macro_double_minus: macro_double_minus {
       compatible = "zmk,behavior-macro";
       label = "macro_double_minus";
       #binding-cells = <0>;
       bindings = <&kp MINUS &kp MINUS>;
-    };
-
-    single_double_minus: single_double_minus {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_minus";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_minus>, <&kp>;
-    };
-
-    under_minus: under_minus {
-      compatible = "zmk,behavior-mod-morph";
-      label = "under_minus";
-      #binding-cells = <0>;
-      bindings = <&single_double_under 0 UNDERSCORE>, <&single_double_minus 0 MINUS>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     macro_triple_dot: macro_triple_dot {
@@ -100,37 +54,11 @@
       bindings = <&kp DOT &kp DOT &kp DOT>;
     };
 
-    single_triple_dot: single_triple_dot {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_triple_dot";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_triple_dot>, <&kp>;
-    };
-
     macro_double_bang: macro_double_bang {
       compatible = "zmk,behavior-macro";
       label = "macro_double_bang";
       #binding-cells = <0>;
       bindings = <&kp EXCLAMATION &kp EXCLAMATION>;
-    };
-
-    single_double_bang: single_double_bang {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_bang";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_bang>, <&kp>;
-    };
-
-    dot_bang: dot_bang {
-      compatible = "zmk,behavior-mod-morph";
-      label = "dot_bang";
-      #binding-cells = <0>;
-      bindings = <&single_triple_dot 0 DOT>, <&single_double_bang 0 EXCLAMATION>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     macro_double_comma: macro_double_comma {
@@ -140,37 +68,11 @@
       bindings = <&kp COMMA &kp COMMA>;
     };
 
-    single_double_comma: single_double_comma {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_comma";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_comma>, <&kp>;
-    };
-
     macro_double_question: macro_double_question {
       compatible = "zmk,behavior-macro";
       label = "macro_double_question";
       #binding-cells = <0>;
       bindings = <&kp QUESTION &kp QUESTION>;
-    };
-
-    single_double_question: single_double_question {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_question";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_question>, <&kp>;
-    };
-
-    comma_question: comma_question {
-      compatible = "zmk,behavior-mod-morph";
-      label = "comma_question";
-      #binding-cells = <0>;
-      bindings = <&single_double_comma 0 COMMA>, <&single_double_question 0 QUESTION>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
     };
 
     macro_backtick: macro_backtick {
@@ -187,15 +89,6 @@
       bindings = <&kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp GRAVE &kp LEFT &kp LEFT &kp LEFT>;
     };
 
-    single_triple_backtick: single_triple_backtick {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_triple_backtick";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_triple_backtick>, <&macro_backtick>;
-    };
-
     macro_parens: macro_parens {
       compatible = "zmk,behavior-macro";
       label = "macro_parens";
@@ -208,15 +101,6 @@
       label = "macro_double_parens";
       #binding-cells = <0>;
       bindings = <&kp LEFT_PARENTHESIS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT &kp LEFT>;
-    };
-
-    single_double_parens: single_double_parens {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_parens";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_parens>, <&macro_parens>;
     };
 
     macro_braces: macro_braces {
@@ -233,15 +117,6 @@
       bindings = <&kp LEFT_BRACE &kp LEFT_BRACE &kp RIGHT_BRACE &kp RIGHT_BRACE &kp LEFT &kp LEFT>;
     };
 
-    single_double_braces: single_double_braces {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_braces";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_braces>, <&macro_braces>;
-    };
-
     macro_brackets: macro_brackets {
       compatible = "zmk,behavior-macro";
       label = "macro_brackets";
@@ -256,29 +131,11 @@
       bindings = <&kp LEFT_BRACKET &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACKET &kp LEFT &kp LEFT>;
     };
 
-    single_double_brackets: single_double_brackets {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_brackets";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_brackets>, <&macro_brackets>;
-    };
-
     macro_double_tilde: macro_double_tilde {
       compatible = "zmk,behavior-macro";
       label = "macro_double_tilde";
       #binding-cells = <0>;
       bindings = <&kp TILDE &kp TILDE>;
-    };
-
-    single_double_tilde: single_double_tilde {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_tilde";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_tilde>, <&kp>;
     };
 
     macro_double_backslash: macro_double_backslash {
@@ -288,29 +145,11 @@
       bindings = <&kp BACKSLASH &kp BACKSLASH>;
     };
 
-    single_double_backslash: single_double_backslash {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_backslash";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_backslash>, <&kp>;
-    };
-
     macro_double_ampersand: macro_double_ampersand {
       compatible = "zmk,behavior-macro";
       label = "macro_double_ampersand";
       #binding-cells = <0>;
       bindings = <&kp AMPERSAND &kp AMPERSAND>;
-    };
-
-    single_double_ampersand: single_double_ampersand {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_ampersand";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_ampersand>, <&kp>;
     };
 
     macro_double_plus: macro_double_plus {
@@ -320,29 +159,11 @@
       bindings = <&kp PLUS &kp PLUS>;
     };
 
-    single_double_plus: single_double_plus {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_plus";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_plus>, <&kp>;
-    };
-
     macro_double_hash: macro_double_hash {
       compatible = "zmk,behavior-macro";
       label = "macro_double_hash";
       #binding-cells = <0>;
       bindings = <&kp HASH &kp HASH>;
-    };
-
-    single_double_hash: single_double_hash {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_hash";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_hash>, <&kp>;
     };
 
     macro_double_equal: macro_double_equal {
@@ -352,29 +173,11 @@
       bindings = <&kp EQUAL &kp EQUAL>;
     };
 
-    single_double_equal: single_double_equal {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_equal";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_equal>, <&kp>;
-    };
-
     macro_double_slash: macro_double_slash {
       compatible = "zmk,behavior-macro";
       label = "macro_double_slash";
       #binding-cells = <0>;
       bindings = <&kp SLASH &kp SLASH>;
-    };
-
-    single_double_slash: single_double_slash {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_slash";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_slash>, <&kp>;
     };
 
     macro_double_at_sign: macro_double_at_sign {
@@ -384,29 +187,11 @@
       bindings = <&kp AT_SIGN &kp AT_SIGN>;
     };
 
-    single_double_at_sign: single_double_at_sign {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_sign";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_at_sign>, <&kp>;
-    };
-
     macro_double_less_than: macro_double_less_than {
       compatible = "zmk,behavior-macro";
       label = "macro_double_less_than";
       #binding-cells = <0>;
       bindings = <&kp LESS_THAN &kp LESS_THAN>;
-    };
-
-    single_double_less_than: single_double_less_than {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_less_than";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_less_than>, <&kp>;
     };
 
     macro_double_greater_than: macro_double_greater_than {
@@ -416,29 +201,11 @@
       bindings = <&kp GREATER_THAN &kp GREATER_THAN>;
     };
 
-    single_double_greater_than: single_double_greater_than {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_greater_than";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_greater_than>, <&kp>;
-    };
-
     macro_double_pipe: macro_double_pipe {
       compatible = "zmk,behavior-macro";
       label = "macro_double_pipe";
       #binding-cells = <0>;
       bindings = <&kp PIPE &kp PIPE>;
-    };
-
-    single_double_pipe: single_double_pipe {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_pipe";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_pipe>, <&kp>;
     };
 
     macro_double_asterisk: macro_double_asterisk {
@@ -448,29 +215,11 @@
       bindings = <&kp ASTERISK &kp ASTERISK>;
     };
 
-    single_double_asterisk: single_double_asterisk {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_asterisk";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_asterisk>, <&kp>;
-    };
-
     macro_double_caret: macro_double_caret {
       compatible = "zmk,behavior-macro";
       label = "macro_double_caret";
       #binding-cells = <0>;
       bindings = <&kp CARET &kp CARET>;
-    };
-
-    single_double_caret: single_double_caret {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_caret";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_caret>, <&kp>;
     };
 
     macro_double_dollar: macro_double_dollar {
@@ -480,29 +229,11 @@
       bindings = <&kp DOLLAR &kp DOLLAR>;
     };
 
-    single_double_dollar: single_double_dollar {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_dollar";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_dollar>, <&kp>;
-    };
-
     macro_double_percent: macro_double_percent {
       compatible = "zmk,behavior-macro";
       label = "macro_double_percent";
       #binding-cells = <0>;
       bindings = <&kp PERCENT &kp PERCENT>;
-    };
-
-    single_double_percent: single_double_percent {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_percent";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_percent>, <&kp>;
     };
 
     macro_double_colon: macro_double_colon {
@@ -512,29 +243,11 @@
       bindings = <&kp COLON &kp COLON>;
     };
 
-    single_double_colon: single_double_colon {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_colon";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_colon>, <&kp>;
-    };
-
     macro_double_semicolon: macro_double_semicolon {
       compatible = "zmk,behavior-macro";
       label = "macro_double_semicolon";
       #binding-cells = <0>;
       bindings = <&kp SEMICOLON &kp SEMICOLON>;
-    };
-
-    single_double_semicolon: single_double_semicolon {
-      compatible = "zmk,behavior-hold-tap";
-      label = "single_double_semicolon";
-      #binding-cells = <2>;
-      tapping_term_ms = <U_TAPPING_TERM>;
-      flavor = "tap-preferred";
-      bindings = <&macro_double_semicolon>, <&kp>;
     };
 
     email: email {
@@ -555,3 +268,44 @@
     };
   };
 };
+
+HOLD_TAP_FUNCTION(single_triple_dquotes, &macro_triple_dquotes, &macro_dquotes)
+HOLD_TAP_KP_FUNCTION(one_two_squotes, &macro_squote)
+SHIFT_FUNCTION(dquotes_squotes, &single_triple_dquotes 0 0, &one_two_squotes 0 SINGLE_QUOTE)
+
+HOLD_TAP_KP_FUNCTION(single_double_under, &macro_double_under)
+HOLD_TAP_KP_FUNCTION(single_double_minus, &macro_double_minus)
+SHIFT_FUNCTION(under_minus, &single_double_under 0 UNDERSCORE, &single_double_minus 0 MINUS)
+
+HOLD_TAP_KP_FUNCTION(single_triple_dot, &macro_triple_dot)
+HOLD_TAP_KP_FUNCTION(single_double_bang, &macro_double_bang)
+SHIFT_FUNCTION(dot_bang, &single_triple_dot 0 DOT, &single_double_bang 0 EXCLAMATION)
+
+HOLD_TAP_KP_FUNCTION(single_double_comma, &macro_double_comma)
+HOLD_TAP_KP_FUNCTION(single_double_question, &macro_double_question)
+SHIFT_FUNCTION(comma_question, &single_double_comma 0 COMMA, &single_double_question 0 QUESTION)
+
+HOLD_TAP_FUNCTION(single_triple_backtick, &macro_triple_backtick, &macro_backtick)
+HOLD_TAP_FUNCTION(single_double_parens, &macro_double_parens, &macro_parens)
+HOLD_TAP_FUNCTION(single_double_braces, &macro_double_braces, &macro_braces)
+HOLD_TAP_FUNCTION(single_double_brackets, &macro_double_brackets, &macro_brackets)
+
+HOLD_TAP_KP_FUNCTION(single_double_semicolon, &macro_double_semicolon)
+HOLD_TAP_KP_FUNCTION(single_double_semicolon, &macro_double_semicolon)
+HOLD_TAP_KP_FUNCTION(single_double_tilde, &macro_double_tilde)
+HOLD_TAP_KP_FUNCTION(single_double_backslash, &macro_double_backslash)
+HOLD_TAP_KP_FUNCTION(single_double_ampersand, &macro_double_ampersand)
+HOLD_TAP_KP_FUNCTION(single_double_plus, &macro_double_plus)
+HOLD_TAP_KP_FUNCTION(single_double_hash, &macro_double_hash)
+HOLD_TAP_KP_FUNCTION(single_double_equal, &macro_double_equal)
+HOLD_TAP_KP_FUNCTION(single_double_slash, &macro_double_slash)
+HOLD_TAP_KP_FUNCTION(single_double_at_sign, &macro_double_at_sign)
+HOLD_TAP_KP_FUNCTION(single_double_less_than, &macro_double_less_than)
+HOLD_TAP_KP_FUNCTION(single_double_greater_than, &macro_double_greater_than)
+HOLD_TAP_KP_FUNCTION(single_double_pipe, &macro_double_pipe)
+HOLD_TAP_KP_FUNCTION(single_double_asterisk, &macro_double_asterisk)
+HOLD_TAP_KP_FUNCTION(single_double_caret, &macro_double_caret)
+HOLD_TAP_KP_FUNCTION(single_double_dollar, &macro_double_dollar)
+HOLD_TAP_KP_FUNCTION(single_double_percent, &macro_double_percent)
+HOLD_TAP_KP_FUNCTION(single_double_colon, &macro_double_colon)
+HOLD_TAP_KP_FUNCTION(single_double_semicolon, &macro_double_semicolon)
