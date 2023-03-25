@@ -1,5 +1,5 @@
 # Copyright 2022 Lukas Kucera
-# https://github.com/kucera-lukas/miryoku
+# https://github.com/kucera-lukas/zmk-config
 
 name: 'Build adv360pro'
 on: workflow_dispatch
@@ -16,5 +16,5 @@ jobs:
       layers: '["default"]'
       mapping: '["default"]'
       custom_config: '["#define MIRYOKU_KLUDGE_MOUSEKEYSPR"]'
-      kconfig: '["CONFIG_ZMK_MOUSE=y"]'
+      kconfig: '["default"]'
       branches: '["urob/zmk/main"]'
