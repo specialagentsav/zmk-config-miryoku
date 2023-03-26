@@ -9,6 +9,7 @@
 #define U_QUICK_TAP_MS 175
 #define U_STRINGIFY(x) #x
 
+#include "clipboard.h"
 #include "hold_tap.h"
 #include "homerow_mods.h"
 #include "layer_tap.h"
@@ -53,10 +54,10 @@ U_NP,              U_NP,              U_LAYER_TAP(U_MEDIA, ESC),    U_LT_SHIFT_M
 U_NP,              U_NP,              &kp ESC,           U_SHIFT_MORPH_SENTENCE_SKQ, &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp PG_UP,         &kp LS(LC(TAB)),   U_NAV_UP,          &kp LC(TAB),   &kp LS(TAB),               \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp PG_DN,         U_NAV_LEFT,        U_NAV_DOWN,        U_NAV_RIGHT,   U_ALT_GUI_TAB_SWAPPER,     \
-U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,         U_UND,                     \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_NAV_DEL,         U_NAV_BSPC,        &kp RET,           U_NP,          U_NP
+U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp PG_UP,         &kp LS(LC(TAB)),   U_NAV_UP,          &kp LC(TAB),                &kp LS(TAB),               \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp PG_DN,         U_NAV_LEFT,        U_NAV_DOWN,        U_NAV_RIGHT,                U_ALT_GUI_TAB_SWAPPER,     \
+U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_RDO,             U_PST,             U_COPY_SELECT_ALL, U_CUT_EDIT_CLIPBOARD,       U_UND,                     \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_NAV_DEL,         U_NAV_BSPC,        &kp RET,           U_NP,                       U_NP
 
 #define MIRYOKU_LAYER_SYM \
 U_SINGLE_DOUBLE_TILDE,         U_SINGLE_TRIPLE_BACKTICK,     U_SINGLE_DOUBLE_BACKSLASH,             U_SINGLE_DOUBLE_AMPERSAND,                U_SINGLE_DOUBLE_PLUS,          U_NA,              &u_to_U_BASE,      &u_to_U_EXTRA,     &u_to_U_TAP,       U_BOOT,            \
@@ -71,10 +72,10 @@ U_SINGLE_DOUBLE_PERCENT,       &kp N9,      &kp N8,                      &kp N7,
 U_NP,                          U_NP,        U_SINGLE_DOUBLE_SEMICOLON,   &kp N0,            U_SINGLE_DOUBLE_COLON,         U_NA,              U_NA,              U_NA,              U_NP,              U_NP
 
 #define MIRYOKU_LAYER_MOUSE \
-U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_WH_U,            U_WH_L,            U_MS_U,            U_WH_R,            U_WH_U,            \
-&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_WH_D,            U_MS_L,            U_MS_D,            U_MS_R,            U_WH_D,            \
-U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_MOUSE,     U_NA,              U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
-U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_BTN3,            U_BTN1,            U_BTN2,            U_NP,              U_NP
+U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_WH_U,            U_WH_L,            U_MS_U,            U_WH_R,                     U_WH_U,            \
+&kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_WH_D,            U_MS_L,            U_MS_D,            U_MS_R,                     U_WH_D,            \
+U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_MOUSE,     U_NA,              U_RDO,             U_PST,             U_COPY_SELECT_ALL, U_CUT_EDIT_CLIPBOARD,       U_UND,             \
+U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_BTN3,            U_BTN1,            U_BTN2,            U_NP,                       U_NP
 
 #define MIRYOKU_LAYER_MEDIA \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp LC(LA(LS(T))),    &kp LC(PLUS),        &kp C_VOL_UP,        &kp LC(LA(LS(M))),         &kp C_BRIGHTNESS_INC,         \

@@ -15,6 +15,10 @@
 #define U_NAV_BSPC  NAV_HOLD_TAP(LC(BSPC), BSPC)  // tap: bspc  | long-tap: delete word backward
 #define U_NAV_DEL   NAV_HOLD_TAP(LC(DEL), DEL)    // tap: del   | long-tap: delete word forward
 
+#define U_COPY_SELECT_ALL HOLD_TAP(LC(A), LC(INS))
+#define U_CUT_EDIT_CLIPBOARD HOLD_TAP(LC(LA(LS(E))), LS(DEL))
+#define U_OPEN_CLEAR_CLIPBOARD_HISTORY HOLD_TAP(LC(LA(LS(H))), LG(V))
+
 #define U_REFRESH_CLOSE_TAB HOLD_TAP(LC(W), LC(R))
 
 #define U_SCREENSHOT HOLD_TAP(PSCRN, LS(LG(PSCRN)))

@@ -37,5 +37,11 @@ HOLD_TAP_FUNCTION(caps_word_caps, &kp, &u_caps_word)
       bindings = <U_REFRESH_CLOSE_TAB>;
       layers = <4>;
     };
+
+    combo_open_clear_clipboard_history {
+      key-positions = <61 62>;
+      bindings = <U_OPEN_CLEAR_CLIPBOARD_HISTORY>;
+      layers = <4 5>;
+    };
   };
 };
