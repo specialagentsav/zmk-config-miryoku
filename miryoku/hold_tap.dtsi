@@ -7,6 +7,10 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#include "mask_mods.h"
+
+#include "mask_mods.dtsi"
+
 #define HOLD_TAP_FUNCTION(NAME, HOLD_BINDING, BINDING) \
 / { \
   behaviors { \
@@ -29,23 +33,31 @@ HOLD_TAP_FUNCTION(out_hold_tap, &out, &out)
 HOLD_TAP_FUNCTION(rgb_hold_tap, &rgb_ug, &rgb_ug)
 HOLD_TAP_FUNCTION(ext_power_hold_tap, &ext_power, &ext_power)
 
+#define NAV_HOLD_TAP_FUNCTION(NAME, HOLD_BINDING, BINDING) \
 / { \
   behaviors { \
-    nav_hold_tap: nav_hold_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "NAV_HOLD_TAP";
-      #binding-cells = <2>;
-      tapping_term_ms = <220>;
-      quick-tap-ms = <220>;  // repeat on tap-into-hold
-      hold-trigger-key-positions = <0>;  // tap on interrupt
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&kp>;
-    };
-  };
+    NAME: NAME { \
+      compatible = "zmk,behavior-hold-tap"; \
+      label = U_STRINGIFY(NAME); \
+      #binding-cells = <2>; \
+      tapping_term_ms = <220>; \
+      quick-tap-ms = <220>; \
+      hold-trigger-key-positions = <0>; \
+      flavor = "tap-preferred"; \
+      bindings = <HOLD_BINDING>, <BINDING>; \
+    }; \
+  }; \
 };
 
+NAV_HOLD_TAP_FUNCTION(nav_hold_tap, &kp, &kp)
+NAV_HOLD_TAP_FUNCTION(nav_masked_home_hold_tap, U_MASKED_HOME, &kp)
+NAV_HOLD_TAP_FUNCTION(nav_masked_end_hold_tap, U_MASKED_END, &kp)
+
 #define HOLD_TAP(hold, tap) &hold_tap hold tap
-#define NAV_HOLD_TAP(hold, tap) &nav_hold_tap hold tap
 #define OUT_HOLD_TAP(hold, tap) &out_hold_tap hold tap
 #define RGB_HOLD_TAP(hold, tap) &rgb_hold_tap hold tap
 #define EXT_POWER_HOLD_TAP(hold, tap) &ext_power_hold_tap hold tap
+
+#define NAV_HOLD_TAP(hold, tap) &nav_hold_tap hold tap
+#define NAV_MASKED_HOME_TAP(tap) &nav_masked_home_hold_tap 0 tap
+#define NAV_MASKED_END_TAP(tap) &nav_masked_end_hold_tap 0 tap
