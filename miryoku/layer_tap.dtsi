@@ -12,5 +12,15 @@
       quick-tap-ms = <U_QUICK_TAP_MS>;
       bindings = <&mo>, <&kp>;
     };
+
+    layer_skq: layer_skq {
+      compatible = "zmk,behavior-hold-tap";
+      label = "LAYER_SKQ";
+      #binding-cells = <2>;
+      flavor = "balanced";
+      tapping_term_ms = <U_TAPPING_TERM>;
+      quick-tap-ms = <U_QUICK_TAP_MS>;
+      bindings = <&mo>, <&skq>;
+    };
   };
 };

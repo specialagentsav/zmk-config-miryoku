@@ -42,16 +42,10 @@ XXX  XXX  XXX  XXX  K32            K33  K34  K32                 K35  K37  K36  
 #define MIRYOKU_MAPPING MIRYOKU_LAYOUTMAPPING_ADV360
 
 #define MIRYOKU_LAYER_BASE \
-&kp Q,             &kp W,             &kp F,                        &kp P,                                   &kp B,                      &kp J,                    &kp L,                      &kp U,                    &kp Y,             U_DQUOTES_SQUOTES,      \
-U_HML(LGUI, A),    U_HML(LALT, R),    U_HML(LCTRL, S),              U_HML(LSHFT, T),                         &kp G,                      &kp M,                    U_HMR(LSHFT, N),            U_HMR(LCTRL, E),          U_HMR(LALT, I),    U_HMR(LGUI, O),          \
-&kp Z,             &kp X,             &kp C,                        &kp D,                                   &kp V,                      &kp K,                    &kp H,                      U_UNDER_MINUS,            U_DOT_BANG,        U_COMMA_QUESTION,       \
-U_NP,              U_NP,              U_LAYER_TAP(U_MEDIA, ESC),    U_LT_SHIFT_MORPH_SENTENCE_SKQ(U_NAV),    U_LAYER_TAP(U_MOUSE, TAB),  U_LAYER_TAP(U_FUN, DEL),  U_LAYER_TAP(U_SYM, BSPC),   U_LAYER_TAP(U_NUM, RET),  U_NP,              U_NP
-
-#define MIRYOKU_LAYER_TAP \
-&kp Q,             &kp W,             &kp F,             &kp P,                      &kp B,             &kp J,             &kp L,             &kp U,             &kp Y,             U_DQUOTES_SQUOTES,   \
-&kp A,             &kp R,             &kp S,             &kp T,                      &kp G,             &kp M,             &kp N,             &kp E,             &kp I,             &kp O,               \
-&kp Z,             &kp X,             &kp C,             &kp D,                      &kp V,             &kp K,             &kp H,             U_UNDER_MINUS,     U_DOT_BANG,        U_COMMA_QUESTION,    \
-U_NP,              U_NP,              &kp ESC,           U_SHIFT_MORPH_SENTENCE_SKQ, &kp TAB,           &kp DEL,           &kp BSPC,          &kp RET,           U_NP,              U_NP
+&kp W,             &kp L,             &kp Y,                        &kp P,                                   &kp B,                      &kp Z,                    &kp F,                      &kp O,                    &kp U,             U_DQUOTES_SQUOTES,      \
+U_HML(LGUI, C),    U_HML(LALT, R),    U_HML(LCTRL, S),              U_HML(LSHFT, T),                         &kp G,                      &kp M,                    U_HMR(LSHFT, N),            U_HMR(LCTRL, E),          U_HMR(LALT, I),    U_HMR(LGUI, A),          \
+&kp Q,             &kp J,             &kp V,                        &kp D,                                   &kp K,                      &kp X,                    &kp H,                      U_UNDER_MINUS,            U_DOT_BANG,        U_COMMA_QUESTION,       \
+U_NP,              U_NP,              U_LAYER_TAP(U_MEDIA, ESC),    U_LT_SHIFT_MORPH_SENTENCE_SKQ(U_NAV),    U_LAYER_TAP(U_MOUSE, TAB),  U_LAYER_TAP(U_FUN, DEL),  U_LAYER_SKQ(U_SYM, LSHFT),  U_LAYER_TAP(U_NUM, RET),  U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp PG_UP,         &kp LS(LC(TAB)),   U_NAV_UP,          &kp LC(TAB),                &kp LS(TAB),               \
