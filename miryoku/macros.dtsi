@@ -257,6 +257,41 @@
       bindings = <&kp SEMICOLON &kp SEMICOLON>;
     };
 
+    macro_select_word: macro_select_word {
+      compatible = "zmk,behavior-macro";
+      label = "macro_select_word";
+      #binding-cells = <0>;
+      bindings = <&kp LC(RIGHT) &kp LS(LC(LEFT))>;
+    };
+
+    macro_select_line: macro_select_line {
+      compatible = "zmk,behavior-macro";
+      label = "macro_select_line";
+      #binding-cells = <0>;
+      bindings = <&kp HOME &kp LS(END)>;
+    };
+
+    macro_join_lines: macro_join_lines {
+      compatible = "zmk,behavior-macro";
+      label = "macro_join_lines";
+      #binding-cells = <0>;
+      bindings
+          // Inspired by https://getreuer.info/posts/keyboards/macros/index.html#select-line-macro.
+          // Go to the end of the line and tap delete.
+        = <&kp END &kp DEL>
+          // In case we joined two words together, insert one space.
+        , <&kp SPC>
+          // Go to the beginning of the next word.
+        , <&kp LC(RIGHT) &kp LC(LEFT)>
+          // Select back to the end of the previous word. This should select
+          // all spaces and tabs between the joined lines from indentation
+          // or trailing whitespace, including the space inserted earlier.
+        , <&kp LS(LC(LEFT)) &kp LS(LC(RIGHT))>
+          // Replace the selection with a single space.
+        , <&kp SPC>
+        ;
+    };
+
     email: email {
       compatible = "zmk,behavior-macro";
       label = "email";
@@ -314,3 +349,6 @@ HOLD_TAP_KP_FUNCTION(single_double_dollar, &macro_double_dollar)
 HOLD_TAP_KP_FUNCTION(single_double_percent, &macro_double_percent)
 HOLD_TAP_KP_FUNCTION(single_double_colon, &macro_double_colon)
 HOLD_TAP_KP_FUNCTION(single_double_semicolon, &macro_double_semicolon)
+
+NAV_HOLD_TAP_FUNCTION(select_word_line, &macro_select_line, &macro_select_word)
+NAV_HOLD_TAP_FUNCTION(ret_join_lines, &macro_join_lines, &kp)

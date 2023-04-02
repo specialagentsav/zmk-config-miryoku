@@ -32,4 +32,11 @@
 #define U_SINGLE_DOUBLE_COLON &single_double_colon 0 COLON
 #define U_SINGLE_DOUBLE_SEMICOLON &single_double_semicolon 0 SEMICOLON
 
+#define U_SELECT_WORD &macro_select_word
+#define U_SELECT_LINE &macro_select_line
+#define U_JOIN_LINES &macro_join_lines
+
+#define U_SELECT_WORD_LINE &select_word_line 0 0
+#define U_RET_JOIN_LINES &ret_join_lines 0 RET
+
 #define U_EMAIL &email

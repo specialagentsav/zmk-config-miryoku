@@ -4,23 +4,13 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#include "caps_word.h"
 #include "hold_tap.h"
+#include "macros.h"
 
+#include "caps_word.dtsi"
 #include "hold_tap.dtsi"
-
-/ {
-  behaviors {
-    u_caps_word: u_caps_word {
-      compatible = "zmk,behavior-caps-word";
-      label = "u_caps_word";
-      #binding-cells = <0>;
-      mods = <MOD_LSFT>;
-      continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z N0 N1 N2 N3 N4 N5 N6 N7 N8 N9 BACKSPACE DELETE COMMA UNDERSCORE EQUAL MINUS LEFT RIGHT DOLLAR>;
-    };
-  };
-};
-
-HOLD_TAP_FUNCTION(caps_word_caps, &kp, &u_caps_word)
+#include "macros.dtsi"
 
 / {
   combos {
@@ -28,13 +18,19 @@ HOLD_TAP_FUNCTION(caps_word_caps, &kp, &u_caps_word)
 
     combo_caps_word_caps {
       key-positions = <32 41>;
-      bindings = <&caps_word_caps CAPS 0>;
+      bindings = <U_CAPS_WORD_CAPS>;
       layers = <0>;
     };
 
     combo_refresh_close_tab {
       key-positions = <25 23>;
       bindings = <U_REFRESH_CLOSE_TAB>;
+      layers = <4>;
+    };
+
+    combo_select_word_line {
+      key-positions = <41 43>;
+      bindings = <U_SELECT_WORD_LINE>;
       layers = <4>;
     };
 
