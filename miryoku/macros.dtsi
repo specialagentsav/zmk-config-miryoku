@@ -96,13 +96,6 @@
       bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
     };
 
-    macro_double_parens: macro_double_parens {
-      compatible = "zmk,behavior-macro";
-      label = "macro_double_parens";
-      #binding-cells = <0>;
-      bindings = <&kp LEFT_PARENTHESIS &kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT &kp LEFT>;
-    };
-
     macro_braces: macro_braces {
       compatible = "zmk,behavior-macro";
       label = "macro_braces";
@@ -110,11 +103,18 @@
       bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
     };
 
-    macro_double_braces: macro_double_braces {
+    macro_double_left_brace: macro_double_left_brace {
       compatible = "zmk,behavior-macro";
-      label = "macro_double_braces";
+      label = "macro_double_left_brace";
       #binding-cells = <0>;
-      bindings = <&kp LEFT_BRACE &kp LEFT_BRACE &kp RIGHT_BRACE &kp RIGHT_BRACE &kp LEFT &kp LEFT>;
+      bindings = <&kp LEFT_BRACE &kp LEFT_BRACE>;
+    };
+
+    macro_double_right_brace: macro_double_right_brace {
+      compatible = "zmk,behavior-macro";
+      label = "macro_double_right_brace";
+      #binding-cells = <0>;
+      bindings = <&kp RIGHT_BRACE &kp RIGHT_BRACE>;
     };
 
     macro_brackets: macro_brackets {
@@ -124,11 +124,18 @@
       bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
     };
 
-    macro_double_brackets: macro_double_brackets {
+    macro_double_left_bracket: macro_double_left_bracket {
       compatible = "zmk,behavior-macro";
-      label = "macro_double_brackets";
+      label = "macro_double_left_bracket";
       #binding-cells = <0>;
-      bindings = <&kp LEFT_BRACKET &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp RIGHT_BRACKET &kp LEFT &kp LEFT>;
+      bindings = <&kp LEFT_BRACKET &kp LEFT_BRACKET>;
+    };
+
+    macro_double_right_bracket: macro_double_right_bracket {
+      compatible = "zmk,behavior-macro";
+      label = "macro_double_right_bracket";
+      #binding-cells = <0>;
+      bindings = <&kp RIGHT_BRACKET &kp RIGHT_BRACKET>;
     };
 
     macro_double_tilde: macro_double_tilde {
@@ -269,9 +276,9 @@
   };
 };
 
-HOLD_TAP_FUNCTION(single_triple_dquotes, &macro_triple_dquotes, &macro_dquotes)
+HOLD_TAP_KP_FUNCTION(one_two_dquotes, &macro_dquotes)
 HOLD_TAP_KP_FUNCTION(one_two_squotes, &macro_squote)
-SHIFT_FUNCTION(dquotes_squotes, &single_triple_dquotes 0 0, &one_two_squotes 0 SINGLE_QUOTE)
+SHIFT_FUNCTION(dquotes_squotes, &one_two_dquotes 0 DOUBLE_QUOTES, &one_two_squotes 0 SINGLE_QUOTE)
 
 HOLD_TAP_KP_FUNCTION(single_double_under, &macro_double_under)
 HOLD_TAP_KP_FUNCTION(single_double_minus, &macro_double_minus)
@@ -285,13 +292,11 @@ HOLD_TAP_KP_FUNCTION(single_double_comma, &macro_double_comma)
 HOLD_TAP_KP_FUNCTION(single_double_question, &macro_double_question)
 SHIFT_FUNCTION(comma_question, &single_double_comma 0 COMMA, &single_double_question 0 QUESTION)
 
-HOLD_TAP_FUNCTION(single_triple_backtick, &macro_triple_backtick, &macro_backtick)
-HOLD_TAP_FUNCTION(single_double_parens, &macro_double_parens, &macro_parens)
-HOLD_TAP_FUNCTION(single_double_braces, &macro_double_braces, &macro_braces)
-HOLD_TAP_FUNCTION(single_double_brackets, &macro_double_brackets, &macro_brackets)
-
-HOLD_TAP_KP_FUNCTION(single_double_semicolon, &macro_double_semicolon)
-HOLD_TAP_KP_FUNCTION(single_double_semicolon, &macro_double_semicolon)
+HOLD_TAP_KP_FUNCTION(single_double_left_brace, &macro_double_left_brace)
+HOLD_TAP_KP_FUNCTION(single_double_right_brace, &macro_double_right_brace)
+HOLD_TAP_KP_FUNCTION(single_double_left_bracket, &macro_double_left_bracket)
+HOLD_TAP_KP_FUNCTION(single_double_right_bracket, &macro_double_right_bracket)
+HOLD_TAP_KP_FUNCTION(single_triple_backtick, &macro_triple_backtick)
 HOLD_TAP_KP_FUNCTION(single_double_tilde, &macro_double_tilde)
 HOLD_TAP_KP_FUNCTION(single_double_backslash, &macro_double_backslash)
 HOLD_TAP_KP_FUNCTION(single_double_ampersand, &macro_double_ampersand)

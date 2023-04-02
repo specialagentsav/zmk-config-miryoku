@@ -1,5 +1,5 @@
 // Copyright 2022 Lukas Kucera
-// https://github.com/kucera-lukas/miryoku
+// https://github.com/kucera-lukas/zmk-config
 
 #pragma once
 
@@ -8,11 +8,12 @@
 #define U_DOT_BANG &dot_bang
 #define U_COMMA_QUESTION &comma_question
 
-#define U_SINGLE_TRIPLE_BACKTICK &single_triple_backtick 0 0
-#define U_SINGLE_DOUBLE_PARENS &single_double_parens 0 0
-#define U_SINGLE_DOUBLE_BRACES &single_double_braces 0 0
-#define U_SINGLE_DOUBLE_BRACKETS &single_double_brackets 0 0
-
+#define U_SINGLE_DOUBLE_MINUS &single_double_minus 0 MINUS
+#define U_SINGLE_TRIPLE_BACKTICK &single_triple_backtick 0 GRAVE
+#define U_SINGLE_DOUBLE_LEFT_BRACE &single_double_left_brace 0 LEFT_BRACE
+#define U_SINGLE_DOUBLE_RIGHT_BRACE &single_double_right_brace 0 RIGHT_BRACE
+#define U_SINGLE_DOUBLE_LEFT_BRACKET &single_double_left_bracket 0 LEFT_BRACKET
+#define U_SINGLE_DOUBLE_RIGHT_BRACKET &single_double_right_bracket 0 RIGHT_BRACKET
 #define U_SINGLE_DOUBLE_TILDE &single_double_tilde 0 TILDE
 #define U_SINGLE_DOUBLE_BACKSLASH &single_double_backslash 0 BACKSLASH
 #define U_SINGLE_DOUBLE_AMPERSAND &single_double_ampersand 0 AMPERSAND
