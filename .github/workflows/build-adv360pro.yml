@@ -2,7 +2,13 @@
 # https://github.com/kucera-lukas/zmk-config
 
 name: 'Build adv360pro'
-on: workflow_dispatch
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
 jobs:
   build:
     uses: ./.github/workflows/main.yml
