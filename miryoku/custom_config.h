@@ -50,7 +50,7 @@ U_NP,              U_NP,              U_LAYER_TAP(U_MEDIA, ESC),    U_LT_SHIFT_M
 #define MIRYOKU_LAYER_NAV \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              &kp PG_UP,         &kp LS(LC(TAB)),   U_NAV_UP,          &kp LC(TAB),                &kp LS(TAB),               \
 &kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              &kp PG_DN,         U_NAV_LEFT,        U_NAV_DOWN,        U_NAV_RIGHT,                U_ALT_GUI_TAB_SWAPPER,     \
-U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_RDO,             U_PST,             U_COPY_SELECT_ALL, U_CUT_EDIT_CLIPBOARD,       U_UND,                     \
+U_NA,              &kp RALT,          &u_to_U_SYM,       &u_to_U_NAV,       U_NA,              U_UND,             U_PST,             U_COPY_SELECT_ALL, U_CUT_EDIT_CLIPBOARD,       U_RDO,                     \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_NAV_DEL,         U_NAV_BSPC,        U_RET_JOIN_LINES,  U_NP,                       U_NP
 
 #define MIRYOKU_LAYER_SYM \
@@ -68,7 +68,7 @@ U_NP,                          U_NP,        U_SINGLE_DOUBLE_SEMICOLON,   &kp N0,
 #define MIRYOKU_LAYER_MOUSE \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      U_NA,              U_WH_U,            U_WH_L,            U_MS_U,            U_WH_R,                     U_WH_U,            \
 &kp LGUI,          &kp LALT,          &kp LCTRL,         &kp LSHFT,         U_NA,              U_WH_D,            U_MS_L,            U_MS_D,            U_MS_R,                     U_WH_D,            \
-U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_MOUSE,     U_NA,              U_RDO,             U_PST,             U_COPY_SELECT_ALL, U_CUT_EDIT_CLIPBOARD,       U_UND,             \
+U_NA,              &kp RALT,          &u_to_U_NUM,       &u_to_U_MOUSE,     U_NA,              U_UND,             U_PST,             U_COPY_SELECT_ALL, U_CUT_EDIT_CLIPBOARD,       U_RDO,             \
 U_NP,              U_NP,              U_NA,              U_NA,              U_NA,              U_BTN3,            U_BTN1,            U_BTN2,            U_NP,                       U_NP
 
 #define MIRYOKU_LAYER_MEDIA \
