@@ -17,7 +17,7 @@
     compatible = "zmk,combos";
 
     combo_caps_word_caps {
-      key-positions = <32 41>;
+      key-positions = <71 76>;
       bindings = <U_CAPS_WORD_CAPS>;
       layers = <0>;
     };
