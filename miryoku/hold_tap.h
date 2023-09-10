@@ -13,10 +13,10 @@
 #define U_NAV_LEFT  NAV_MASKED_HOME_TAP(LEFT)     // tap: left  | long-tap: beginning of line
 #define U_NAV_RIGHT NAV_MASKED_END_TAP(RIGHT)     // tap: right | long-tap: end of line
 
-#define U_NAV_UP    NAV_HOLD_TAP(LC(HOME), UP)    // tap: up    | long-tap: beginning of document
-#define U_NAV_DOWN  NAV_HOLD_TAP(LC(END), DOWN)   // tap: down  | long-tap: end of document
-#define U_NAV_BSPC  NAV_HOLD_TAP(LC(BSPC), BSPC)  // tap: bspc  | long-tap: delete word backward
-#define U_NAV_DEL   NAV_HOLD_TAP(LC(DEL), DEL)    // tap: del   | long-tap: delete word forward
+#define U_NAV_UP    NAV_HOLD_TAP(LC(HOME), UP)    // tap: up   | long-tap: beginning of document
+#define U_NAV_DOWN  NAV_HOLD_TAP(LC(END), DOWN)   // tap: down | long-tap: end of document
+#define U_NAV_BSPC  NAV_HOLD_TAP(BSPC, LC(BSPC))  // tap: delete word backward | long-tap: bspc
+#define U_NAV_DEL   NAV_HOLD_TAP(DEL, LC(DEL))    // tap: delete word forward  | long-tap: del
 
 #define U_COPY_SELECT_ALL HOLD_TAP(LC(A), LC(INS))
 #define U_CUT_EDIT_CLIPBOARD HOLD_TAP(LC(LA(LS(E))), LS(DEL))
